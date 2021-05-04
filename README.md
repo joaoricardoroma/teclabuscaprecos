@@ -2,8 +2,8 @@
 ## Buscador de precos. 
 __Bot espalhados pelos sites reunindo informacoes de anuncios para pessoa localizar onde tem melhor a oportunidade de compra.__ 
 
--tabela de clientes
--tabela de busca
+* -tabela de clientes
+* -tabela de busca
 
 
 
