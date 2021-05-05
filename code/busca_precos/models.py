@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Client(models.Model):
     def __str__(self):
         return f"{self.name}, {self.cpf}, {self.rg}"
@@ -8,3 +9,19 @@ class Client(models.Model):
     rg = models.CharField(max_length=11, null=False)
     cpf = models.CharField(max_length=11, null=False)
     email = models.EmailField(max_length=254)
+
+
+class Busca(models.Model):
+    def __str__(self):
+        return f'{self.busca}, {self.site}, {self.periodicidade}'
+
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    busca = models.CharField(max_length=254, null=False)
+    site = models.CharField(max_length=254, null=False, choices=[
+        ("Kabum", "KABUM"),
+    ])
+    periodicidade = models.IntegerField(choices=[
+        (24, "todo dia"),
+        (12, "duas vezes ao dia"),
+        (6, "quatro vezes ao dia"),
+    ])
