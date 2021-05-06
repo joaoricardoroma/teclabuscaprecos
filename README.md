@@ -11,7 +11,7 @@ queriam ou que estavam esperando.
 # Bot selenium
 ## Bot Kabum
 * criar tela de busca de produtos 
-**   criar template e view 
+*   criar template e view 
 *   enviar formulario de busca de produto
 * excluir buscas de produtos
 * tela de login
