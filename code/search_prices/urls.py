@@ -4,5 +4,5 @@ from . import views
 
 app_name = 'busca_precos'
 urlpatterns = [
-    path('', views.busca, name='busca'),
+    path('', views.Search, name='busca'),
     ]

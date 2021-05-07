@@ -11,12 +11,12 @@ class Client(models.Model):
     email = models.EmailField(max_length=254)
 
 
-class Busca(models.Model):
+class Search(models.Model):
     def __str__(self):
-        return f'{self.busca}, {self.site}, {self.periodicidade}'
+        return f'{self.search}, {self.site}, {self.periodicidade}'
 
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    busca = models.CharField(max_length=254, null=False)
+    search = models.CharField(max_length=254, null=False)
     site = models.CharField(max_length=254, null=False, choices=[
         ("Kabum", "KABUM"),
     ])

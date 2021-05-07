@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class BuscaPrecosConfig(AppConfig):
+class SearchPriceConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'busca_precos'
