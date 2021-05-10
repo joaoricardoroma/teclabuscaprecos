@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class SearchPriceConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'busca_precos'
+    name = 'search_prices'

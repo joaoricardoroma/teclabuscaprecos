@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'busca_precos.apps.SearchPriceConfig',
+    'search_prices.apps.SearchPriceConfig',
 ]
 
 MIDDLEWARE = [
