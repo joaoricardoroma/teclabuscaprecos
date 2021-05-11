@@ -5,5 +5,5 @@ from . import views
 app_name = 'search_prices'
 urlpatterns = [
     path('', views.search, name='search'),
-    path('search', views.search, name='searched_item'),
+    path('delete', views.delete_search, name='delete_search'),
     ]

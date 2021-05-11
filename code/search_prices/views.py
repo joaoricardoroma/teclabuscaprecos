@@ -3,26 +3,26 @@ from .forms import SearchForm
 from .models import Search, Client
 
 
-def search(request, pk):
+def search(request):
     item = Search.objects.all()
     form_search = SearchForm()
-    client = get_object_or_404(Client, pk=pk)
-
+    id_logado = 1
+    searches = Search.objects.filter(client_id=id_logado)
     if request.method == 'POST':
-        client = get_object_or_404(Client, pk=pk)
         form_search = SearchForm(request.POST)
-        form_search.instance.client = client
 
         if form_search.is_valid():
             form_search.save()
             return redirect('search_prices:search')
     context = {'item': item,
                'form_search': form_search,
-               'client': client,
+               'searches': searches,
                }
     return render(request, 'home.html', context)
 
 
-def searched_item(request):
-    return render(request, 'searched_item.html')
-
+def delete_search(request):
+    id_logado = 1
+    clients = Search.objects.filter(client_id=id_logado)
+    clients.delete()
+    return redirect('search_prices:search')
