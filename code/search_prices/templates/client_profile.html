@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client Profile</title>
+</head>
+<body>
+    <form action="{% url 'search_prices:client_profile' client.id  %}" method="post">
+    <h2>Client {{ client.name }}</h2>
+    {% csrf_token %}
+    {{ form_client }}
+    <input type="submit" value="Send">
+</form>
+<a href="{% url 'search_prices:delete_client' client.id %}">Delete Account</a>
+</body>
+</html>

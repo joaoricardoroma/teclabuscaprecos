@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Busca precos</title>
+    <title>Search Prices</title>
 </head>
 <body>
-<h1>Busca Preços</h1>
+<a href="client_register">Sign up</a>
+<h1>Search Prices</h1>
 <div id="divBusca">
     <form action="{% url 'search_prices:search'%}" method="post">
     {% csrf_token %}
@@ -14,10 +15,20 @@
     </form>
     {% for search in searches %}
     {{ search.search }}
-    <a href="{% url 'search_prices:delete_search'  %}">Delete</a>
+    <a href="{% url 'search_prices:delete_search' search.id %}">Delete</a>
      <br>
     {% endfor %}
-    {{ clients }}
+</div>
+<div>
+    <h2>Clients</h2>
+    {% for client in clients %}
+    <ul>
+        <li>
+            {{ client.name }}
+            <a href="{% url 'search_prices:client_profile' client.id %}">Profile</a>
+        </li>
+    </ul>
+    {% endfor %}
 </div>
 </body>
 </html>
