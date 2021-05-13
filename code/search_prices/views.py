@@ -20,7 +20,7 @@ def search(request):
         'form_search': form_search,
         'searches': searches,
         'clients': clients,
-               }
+    }
     return render(request, 'home.html', context)
 
 
