@@ -5,10 +5,10 @@
     <title>Search Prices</title>
 </head>
 <body>
-<a href="client_register">Sign up</a>
+<a href="{% url 'search_prices:register_client' %}">Sign up</a>
 <h1>Search Prices</h1>
 <div id="divBusca">
-    <form action="{% url 'search_prices:search'%}" method="post">
+    <form action="{% url 'search_prices:search' %}" method="post">
     {% csrf_token %}
     {{ form_search }}<br>
     <input value="Enviar" type="submit">
