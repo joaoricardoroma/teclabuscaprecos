@@ -5,6 +5,15 @@
     <title>Client Login</title>
 </head>
 <body>
+<section>
+    <div>
+        <form action="{% url 'search_prices:login_client' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</section>
 
 </body>
 </html>

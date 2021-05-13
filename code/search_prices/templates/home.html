@@ -5,7 +5,11 @@
     <title>Search Prices</title>
 </head>
 <body>
-<a href="{% url 'search_prices:register_client' %}">Sign up</a>
+<nav>
+    <a href="{% url 'search_prices:register_client' %}">Sign up</a>
+    <a href="{% url 'search_prices:login_client' %}">Sign in</a>
+    <a href="{% url 'search_prices:logout_client' %}">Log out</a>
+</nav>
 <h1>Search Prices</h1>
 <div id="divBusca">
     <form action="{% url 'search_prices:search' %}" method="post">

@@ -60,7 +60,7 @@ def register_client(request):
 
         if user is not None:
             login(request, user)
-            return redirect("url search_prices:search")
+            return redirect("search_prices:search")
         else:
             request.session['register_error'] = 1
 
@@ -104,7 +104,7 @@ def login_client(request):
 
 def logout_client(request):
     logout(request)
-    return redirect("/login")
+    return redirect("/")
 
 
 def delete_search(request, pk):
