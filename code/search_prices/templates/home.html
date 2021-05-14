@@ -9,6 +9,7 @@
     <a href="{% url 'search_prices:register_client' %}">Sign up</a>
     <a href="{% url 'search_prices:login_client' %}">Sign in</a>
     <a href="{% url 'search_prices:logout_client' %}">Log out</a>
+    <a href="{% url 'search_prices:UserListView' %}">User List</a>
 </nav>
 <h1>Search Prices</h1>
 <div id="divBusca">
@@ -24,15 +25,6 @@
     {% endfor %}
 </div>
 <div>
-    <h2>Clients</h2>
-    {% for client in clients %}
-    <ul>
-        <li>
-            {{ client.name }}
-            <a href="{% url 'search_prices:client_profile' client.id %}">Profile</a>
-        </li>
-    </ul>
-    {% endfor %}
 </div>
 </body>
 </html>
