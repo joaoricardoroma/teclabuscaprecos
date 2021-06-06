@@ -7,10 +7,10 @@
 <body>
 <section>
     <div>
-        <form action="{% url 'search_prices:register_client' %}" method="post">
+        <form action='' method='POST'>
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Send">
+            <input type='submit' value='Send'/>
         </form>
     </div>
 </section>

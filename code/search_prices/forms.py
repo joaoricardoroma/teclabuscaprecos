@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Search, Client
+from .models import Search
 from django.contrib.auth import get_user_model
 
 non_allowed_usernames = ['Rogerio']
@@ -11,12 +11,6 @@ User = get_user_model()
 class SearchForm(ModelForm):
     class Meta:
         model = Search
-        fields = '__all__'
-
-
-class ClientForm(ModelForm):
-    class Meta:
-        model = Client
         fields = '__all__'
 
 

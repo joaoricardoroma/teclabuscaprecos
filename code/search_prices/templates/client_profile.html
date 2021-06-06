@@ -5,12 +5,12 @@
     <title>Client Profile</title>
 </head>
 <body>
-    <form action="{% url 'search_prices:UserUpdateView' _id  %}" method="post">
+<form action="{% url 'search_prices:UserUpdateView' instance.id  %}" method="post">
     <h2>Client {{ client.name }}</h2>
     {% csrf_token %}
-    {{ form_client }}
+    {{ form.as_p }}
     <input type="submit" value="Send">
 </form>
-<a href="{% url 'search_prices:delete_client' client.id %}">Delete Account</a>
+<a href="{% url 'search_prices:delete_client' instance.id %}">Delete Account</a>
 </body>
 </html>

@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import SearchForm, ClientForm, RegisterForm, LoginForm
+from .forms import SearchForm, RegisterForm, LoginForm
 from .models import Search, Client
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.admin.views.decorators import staff_member_required
-from django.views.generic import UpdateView, ListView
+from django.views.generic import ListView
+from django.views.generic.edit import UpdateView
 
 User = get_user_model()
 
@@ -12,6 +13,12 @@ class UserListView(ListView):
     template_name = 'registration/user_list.html'
     queryset = User.objects.all()
 
+
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'register_client.html'
+    form_class = RegisterForm
+    success_url = '/'
 
 
 def search(request):
@@ -36,30 +43,6 @@ def search(request):
         'searches': searches,
     }
     return render(request, 'home.html', context)
-
-
-class UserUpdateView(UpdateView):
-    model = User
-    fields = ['username', 'email', 'password', 'password2']
-    template_name = 'registration/client_profile.html'
-
-    def get_object(self, queryset=None):
-        id_ = self.kwargs.get("id")
-        return get_object_or_404(User, id=id_)
-    # client = get_object_or_404(User, pk=pk)
-    # form_client = ClientForm(instance=client)
-    #
-    # if request.method == 'POST':
-    #     form_client = ClientForm(request.POST, instance=client)
-    #
-    #     if form_client.is_valid():
-    #         form_client.save()
-    #         return redirect('search_prices:client_profile', pk=client.id)
-    # context = {
-    #     'client': client,
-    #     'form_client': form_client,
-    # }
-    # return render(request, 'client_profile.html', context)
 
 
 def register_client(request):
